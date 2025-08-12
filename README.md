@@ -24,7 +24,7 @@ A Plugin for the TRMNL device (https://usetrmnl.com/) that display Trivia Questi
 
 ## Create Private Plugin of this
 
-You can create your own Private Plugin in Trmnl if you like (I might submit as a Recipe/community in future).
+You can create your own Private Plugin in Trmnl if you like (I might submit as a Recipe/community in future so the below will not be needed).
 
 ### Private Plugin Install Steps
 
@@ -38,7 +38,7 @@ You can create your own Private Plugin in Trmnl if you like (I might submit as a
 
   ```
 
-  - Skip to Form Fields section (allows options for category & question difficulty) and copy & paste from code folder src/settings.yml section under
+  - Skip to Form Fields section (allows options for category & question difficulty) and copy & paste from code folder file `src/settings.yml` section under
     ` custom_fields:`
   - Leave rest default and at the top right of the page give it a Name like
     `Open Trivia DB`
@@ -50,8 +50,6 @@ You can create your own Private Plugin in Trmnl if you like (I might submit as a
   - Hit `save` then top left `Back to plugin settings` should display the plugin screen, if not
   - Search for `Force Refresh` on the page and click `Click Here` to force a refresh to display
   - You can also now change the `Refresh rate` to like every 15 minutes or whatever you like
-
-  Hopefully will make this a Recipe available in the plugins market place in the future.
 
 ## Enjoy!
 
