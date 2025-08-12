@@ -1,0 +1,68 @@
+<div class="layout">
+    <div class="rows">
+
+        <!-- Category -->
+        <div class="flex flex--row flex--left flex--top border--h-1">
+            <span class="text--gray-10" style="font-size:22px;">{{ results[0].category }}</span>
+        </div>
+        
+        <!-- Question -->
+        <div class="flex flex--row flex--center-x m--1 w--full">
+            <span class="text-bold clamp--none" style="font-size:29px;">{{ results[0].question }}</span>
+        </div>
+
+        <!-- Options Multiple Choice, True or False -->
+        <div class="flex flex--row flex--center-x w--full">
+
+            <!-- if multiple choice -->
+            {% if results[0].type == "multiple" %}
+            <!-- No shuffle or randomize with trmnl or liquid so had to it with javascript using Fisher-Yates shuffle -->
+                <script>
+                const all_answers = [];
+
+                {% for ans in results[0].incorrect_answers %}
+                    all_answers.push("{{ ans | jsonify }}");
+                {% endfor %}
+                all_answers.push("{{ results[0].correct_answer | jsonify }}");
+
+                for (let i = all_answers.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [all_answers[i], all_answers[j]] = [all_answers[j], all_answers[i]];
+                }
+                document.write(`<div class="flex flex--col flex--center-x m--1">`)
+                all_answers.forEach(a => {
+                    document.write(`<span class="text-bold" style="font-size:20px;">${a}</span>`);
+                });
+                document.write(`</div>`)
+                </script>
+            {% endif %}
+
+            <!-- if true or false -->
+                {% if results[0].type == "boolean" %}
+                    <span class="text-bold m--7" style="font-size:30px;">True or False </span>
+                {% endif %}
+        </div>
+        
+        <!-- Question Difficulty Level (left side) & Answer QR (right side) -->
+        <div class="flex flex--row flex--bottom m--1" style="font-size:15px;">
+            <!-- Question Difficulty Level -->
+            <div class="stretch-y">
+                Question Difficulty - {{ results[0].difficulty | capitalize }}
+            </div>
+
+            <!-- Answer QR Code  -->
+            {% assign answer = results[0].correct_answer %}
+            <div class="flex flex--row" style="text-align:right;">
+                ANSWER 
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=65x65&data={{ answer | url_encode }}" alt="Answer" />
+            </div>
+        </div>
+
+    </div>    
+</div>
+
+<!-- title bar-->
+<div class="title_bar">
+    <span class="title">Open Trivia DB</span>
+    <span class="instance">Trivia Questions</span>
+</div>

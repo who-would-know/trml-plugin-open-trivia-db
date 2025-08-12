@@ -1,0 +1,30 @@
+#
+# Changes to this file will be overwritten by `trmnlp pull`.
+#
+# Docs: https://help.usetrmnl.com/en/articles/10542599-importing-and-exporting-private-plugins#h_581fb988f0
+#
+---
+strategy: polling
+no_screen_padding: "no"
+dark_mode: "no"
+static_data: ""
+polling_verb: get
+polling_url: "https://opentdb.com/api.php?amount=1&category={{category}}&difficulty={{difficulty}}"
+polling_headers: ""
+name: Open Trivia DB
+refresh_interval: 15
+custom_fields:
+  - keyname: category
+    field_type: string
+    name: Trivia Category
+    description: Trivia Category - If no value will be random. Get the IDs by select the Category and Generating API string. The &category= should show the number to add. <a href="https://opentdb.com/api_config.php" class="underline" target="_blank">here</a>."
+    optional: true
+  - keyname: difficulty
+    field_type: select
+    name: Question Difficulty
+    options:
+      - "easy"
+      - "medium"
+      - "hard"
+    description: Trivia Questions difficulty level. If no value set will be random. Levels to select - easy, medium, hard.
+    optional: true
