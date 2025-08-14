@@ -17,7 +17,7 @@ custom_fields:
   - keyname: category
     field_type: string
     name: Trivia Category
-    description: Trivia Category - If no value will be random. Get the IDs by select the Category and Generating API string. The &category= should show the number to add. <a href="https://opentdb.com/api_config.php" class="underline" target="_blank">here</a>."
+    description: Trivia Category - If no value entered, will be random. Get the IDs <a href="https://opentdb.com/api_config.php" class="underline" target="_blank">here</a> at Open Trivia DB by select the Category and Generating API string. The &category= should show the number to add."
     optional: true
   - keyname: difficulty
     field_type: select
@@ -26,5 +26,5 @@ custom_fields:
       - "easy"
       - "medium"
       - "hard"
-    description: Trivia Questions difficulty level. If no value set will be random. Levels to select - easy, medium, hard.
+    description: Trivia Questions difficulty level - If no value selected, will be random. Levels to select - easy, medium, hard.
     optional: true
