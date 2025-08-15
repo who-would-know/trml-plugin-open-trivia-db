@@ -24,7 +24,7 @@ A Plugin for the TRMNL device (https://usetrmnl.com/) that display Trivia Questi
 
 ## Create Private Plugin of this
 
-You can create your own Private Plugin in Trmnl if you like (I might submit as a Recipe/community in future so the below will not be needed).
+You can create your own Private Plugin in Trmnl if you like (I might submit as a Recipe/community in future).
 
 ### Private Plugin Install Steps
 
