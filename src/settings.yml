@@ -14,6 +14,13 @@ polling_headers: ""
 name: Open Trivia DB
 refresh_interval: 15
 custom_fields:
+  - keyname: author_bio
+    field_type: author_bio
+    name: About This Plugin
+    description: Shows Trivia Questions from Open Trivia DB
+    github_url: https://github.com/who-would-know/trml-plugin-open-trivia-db
+    learn_more_url: https://opentdb.com/
+    email_address: whowouldknowdev@gmail.com
   - keyname: category
     field_type: string
     name: Trivia Category
