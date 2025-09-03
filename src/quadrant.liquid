@@ -1,14 +1,14 @@
-<div class="layout">
+<div class="layout" style="font-family: sans-serif;">
     <div class="rows">
 
         <!-- Category -->
         <div class="flex flex--row flex--left flex--top border--h-1">
-            <span class="text--gray-10" style="font-size:12px;">{{ results[0].category }}</span>
+            <span class="text--gray-10" style="font-size:0.75em;">{{ results[0].category }}</span>
         </div>
         
         <!-- Question -->
         <div class="flex flex--row flex--center-x m--1 w--full">
-            <span class="text-bold clamp--none" style="font-size:15px;">{{ results[0].question }}</span>
+            <span class="text-bold clamp--none" style="font-size:0.85em;">{{ results[0].question }}</span>
         </div>
 
         <!-- Options Multiple Choice, True or False -->
@@ -31,7 +31,7 @@
                 }
                 document.write(`<div class="flex flex--col flex--center-x">`)
                 all_answers.forEach(a => {
-                    document.write(`<span class="text-bold" style="font-size:13px;">${a}</span>`);
+                    document.write(`<span class="text-bold" style="font-size:0.70em;">${a}</span>`);
                 });
                 document.write(`</div>`)
                 </script>
@@ -39,12 +39,12 @@
 
             <!-- if true or false -->
                 {% if results[0].type == "boolean" %}
-                    <span class="text-bold m--7" style="font-size:15px;">True or False </span>
+                    <span class="text-bold m--7" style="font-size:0.93em;">True or False </span>
                 {% endif %}
         </div>
         
         <!-- Question Difficulty Level (left side) & Answer QR (right side) -->
-        <div class="flex flex--row flex--bottom" style="font-size:10px;">
+        <div class="flex flex--row flex--bottom" style="font-size:0.62em;">
             <!-- Question Difficulty Level -->
             <div class="stretch-y">
                 Question Difficulty - {{ results[0].difficulty | capitalize }}
@@ -54,7 +54,7 @@
             {% assign answer = results[0].correct_answer %}
             <div class="flex flex--row" style="text-align:right;">
                 ANSWER 
-                <img src="https://api.qrserver.com/v1/create-qr-code/?size=36x36&data={{ answer | url_encode }}" alt="Answer" />
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=37x37&data={{ answer | url_encode }}" alt="Answer" />
             </div>
         </div>
 
@@ -62,7 +62,7 @@
 </div>
 
 <!-- title bar-->
-<div class="title_bar">
+<div class="title_bar" style="font-family: sans-serif;">
     <span class="title">Open Trivia DB</span>
     <span class="instance">Trivia Questions</span>
 </div>
